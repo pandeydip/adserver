@@ -1,0 +1,79 @@
+adition_api_v1_create_content_unit:
+    path:     /content-unit
+    defaults: { _controller: AditionApiBundle:ContentUnit:post, _format: json }
+    requirements:
+      methods: POST
+
+adition_api_v1_get_content_unit:
+    path:     /content-unit/{id}
+    defaults: { _controller: AditionApiBundle:ContentUnit:get, _format: json }
+    requirements:
+      methods: GET
+
+adition_api_v1_delete_content_unit:
+    path:     /content-unit/{id}/delete
+    defaults: { _controller: AditionApiBundle:ContentUnit:delete, _format: json }
+    requirements:
+      methods: DELETE
+
+adition_api_v1_create_campaign:
+    path:     /campaign
+    defaults: { _controller: AditionApiBundle:Campaign:post, _format: json }
+    requirements:
+        methods: POST
+
+adition_api_v1_update_campaign:
+    path:     /campaign/{id}/update
+    defaults: { _controller: AditionApiBundle:Campaign:put, _format: json }
+    requirements:
+        methods: POST
+        id: \d+
+
+adition_api_v1_get_campaign:
+    path:     /campaign/{id}
+    defaults: { _controller: AditionApiBundle:Campaign:get, _format: json }
+    requirements:
+        methods: GET
+        id: \d+
+
+adition_api_v1_delete_campaign:
+    path:     /campaign/{id}/delete
+    defaults: { _controller: AditionApiBundle:Campaign:delete, _format: json }
+    requirements:
+        methods: DELETE
+        id: \d+
+
+adition_api_v1_create_banner:
+    path:     /banner
+    defaults: { _controller: AditionApiBundle:Banner:post, _format: json }
+    requirements:
+        methods: POST
+
+adition_api_v1_update_banner:
+    path:     /banner/{id}/update
+    defaults: { _controller: AditionApiBundle:Banner:put, _format: json }
+    requirements:
+        methods: POST
+        id: \d+
+
+adition_api_v1_get_banner:
+    path:     /banner/{id}
+    defaults: { _controller: AditionApiBundle:Banner:get, _format: json }
+    requirements:
+        methods: GET
+        id: \d+
+
+adition_api_v1_delete_banner:
+    path:     /banner/{id}/delete
+    defaults: { _controller: AditionApiBundle:Banner:delete, _format: json }
+    requirements:
+        methods: DELETE
+        id: \d+
+
+adition_api_v1_add_banner_campaign:
+    path:     /banner/{bannerId}/{campaignId}
+    defaults: { _controller: AditionApiBundle:Banner:addBannerToCampaign, _format: json }
+    requirements:
+        methods: POST
+        bannerId: \d+
+        campaignId: \d+

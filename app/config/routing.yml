@@ -1,0 +1,11 @@
+adition_core:
+    resource: "@AditionCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+adition_api:
+    resource: "@AditionApiBundle/Resources/config/routing.yml"
+    prefix:   /api/v1
+
+adition_ad:
+    resource: "@AditionAdBundle/Resources/config/routing.yml"
+    prefix:   /

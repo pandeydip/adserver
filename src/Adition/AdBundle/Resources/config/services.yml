@@ -1,0 +1,42 @@
+services:
+
+  #Repository services
+  adition.campaign_repository:
+      class: Doctrine\ORM\EntityRepository
+      factory: ["@doctrine.orm.default_entity_manager", "getRepository"]
+      arguments:
+          - Adition\AdBundle\Entity\Campaign
+
+  adition.user_repository:
+      class: Doctrine\ORM\EntityRepository
+      factory: ["@doctrine.orm.default_entity_manager", "getRepository"]
+      arguments:
+          - Adition\AdBundle\Entity\User
+
+  adition.content_unit_repository:
+      class: Doctrine\ORM\EntityRepository
+      factory: ["@doctrine.orm.default_entity_manager", "getRepository"]
+      arguments:
+          - Adition\AdBundle\Entity\ContentUnit
+
+  adition.content_banner_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.default_entity_manager", "getRepository"]
+        arguments:
+            - Adition\AdBundle\Entity\Banner
+
+  adition.user_manager:
+      class: Adition\AdBundle\Service\UserManagerService
+      arguments: ["@adition.user_repository"]
+
+  adition.content_unit:
+      class: Adition\AdBundle\Service\ContentUnitService
+      arguments: ["@adition.content_unit_repository"]
+
+  adition.campaign_service:
+      class: Adition\AdBundle\Service\CampaignService
+      arguments: ["@adition.campaign_repository"]
+
+  adition.banner_service:
+      class: Adition\AdBundle\Service\BannerService
+      arguments: ["@service_container", "@adition.content_banner_repository","@adition.campaign_repository"]
