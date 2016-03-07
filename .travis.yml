@@ -11,5 +11,6 @@ before_script:
   - if [ "`phpenv version-name`" != "hhvm" ]; then echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi
   - if [ "`phpenv version-name`" != "hhvm" ]; then echo "extension = amqp.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi
   - composer install --prefer-source
+  - mysql -e "create database IF NOT EXISTS adserver_test;" -uroot
 
 script: phpunit -c app/
