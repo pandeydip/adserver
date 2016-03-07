@@ -1,4 +1,5 @@
-advertisement-server
+Adition Task - Adserver
 ====================
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pandeydip/adserver/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pandeydip/adserver/?branch=master)
 
-A Symfony project created on March 3, 2016, 4:08 pm.
+Project done for Adserver Practical test.
