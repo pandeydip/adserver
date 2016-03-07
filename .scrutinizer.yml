@@ -50,7 +50,9 @@ checks:
         duplication: true
 filter:
     excluded_paths:
-        - src/**/**/Tests
+        - src/*/*/Tests
+        - app/
+        - web/
 
 build:
     environment:
