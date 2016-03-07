@@ -271,7 +271,7 @@ class Campaign
 
     /**
      * @param Banner $banner
-     * @return $this$
+     * @return $this
      */
     public function addBanner(Banner $banner)
     {
@@ -282,7 +282,7 @@ class Campaign
     }
 
     /**
-     * @return ArrayCollection
+     * @return User
      */
     public function getUser()
     {

@@ -41,7 +41,7 @@ class CampaignRepository extends EntityRepository
      * @param User $user
      * @param $params
      * @param $id
-     * @return Campaign
+     * @return Campaign|null
      */
     public function update(User $user, $params, $id)
     {
@@ -51,7 +51,7 @@ class CampaignRepository extends EntityRepository
             $campaign->setRequestLimit((int)$params['requestLimit']);
             $campaign->setStartDate(new DateTime($params['startDate']));
             $campaign->setEndDate(new DateTime($params['endDate']));
-            $campaign->setState((int)$params['state']);
+            $campaign->setState((bool)$params['state']);
             $this->_em->persist($campaign);
             $this->_em->flush();
 

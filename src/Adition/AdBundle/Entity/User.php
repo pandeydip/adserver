@@ -31,28 +31,28 @@ class User
     protected $username;
 
     /**
-     * @var int
+     * @var string
      *
      * @ORM\Column(name="password", type="string", length=100, nullable=false)
      */
     protected $password;
 
     /**
-     * @var Banner
+     * @var ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="Banner", mappedBy="user", cascade={"persist", "remove"})
      */
     protected $banners;
 
     /**
-     * @var Campaign
+     * @var ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="Campaign", mappedBy="user", cascade={"persist", "remove"})
      */
     protected $campaigns;
 
     /**
-     * @var ContentUnit
+     * @var ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="ContentUnit", mappedBy="user", cascade={"persist", "remove"})
      */
@@ -105,7 +105,7 @@ class User
     /**
      * Set password
      *
-     * @param integer $password
+     * @param string $password
      * @return User
      */
     public function setPassword($password)
@@ -118,7 +118,7 @@ class User
     /**
      * Get password
      *
-     * @return integer
+     * @return string
      */
     public function getPassword()
     {
@@ -126,7 +126,7 @@ class User
     }
 
     /**
-     * @return Banner
+     * @return ArrayCollection
      */
     public function getBanners()
     {
@@ -145,7 +145,7 @@ class User
     }
 
     /**
-     * @return Campaign
+     * @return ArrayCollection
      */
     public function getCampaigns()
     {
@@ -164,7 +164,7 @@ class User
     }
 
     /**
-     * @return ContentUnit
+     * @return ArrayCollection
      */
     public function getContentUnits()
     {
