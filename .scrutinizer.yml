@@ -61,4 +61,4 @@ build:
     tests:
         before:
             - mysql -e "CREATE DATABASE adserver_test"
-            -"app/console doctrine:schema:update --env=test --force"
+            - "app/console doctrine:schema:update --env=test --force"
