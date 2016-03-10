@@ -62,8 +62,3 @@ build:
         before:
             - mysql -e "CREATE DATABASE adserver_test"
             - "app/console doctrine:schema:update --env=test --force"
-        override:
-            command: 'phpunit -c app/ --verbose --coverage-text --coverage-clover=coverage.xml'
-            coverage:
-                file: 'coverage.xml'
-                format: 'php-clover'
