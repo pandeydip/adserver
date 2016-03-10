@@ -1,7 +1,7 @@
 languages:
   PHP: true
 exclude_paths:
-- "src/*/*/Tests/"
+- "src/**/**/Tests/"
 - "app/*"
 - "bin/*"
 - "web/*"
