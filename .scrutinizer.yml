@@ -50,9 +50,9 @@ checks:
         duplication: true
 filter:
     excluded_paths:
-        - src/*/*/Tests
-        - app/
-        - web/
+        - src/**/**/Tests
+        - app/*
+        - web/*
 
 build:
     environment:
@@ -64,6 +64,6 @@ build:
             - "app/console doctrine:schema:update --env=test --force"
         override:
             command: 'phpunit -c app/ --coverage-clover=coverage-file'
-                coverage:
-                    file: 'coverage-file'
-                    format: 'php-clover'
+            coverage:
+                file: 'coverage-file'
+                format: 'php-clover'
